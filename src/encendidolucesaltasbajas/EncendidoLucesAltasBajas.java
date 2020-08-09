@@ -11,7 +11,7 @@ package encendidolucesaltasbajas;
 import java.util.Scanner;
 import javax.swing.JOptionPane;
 public class EncendidoLucesAltasBajas {
-    public static String Probar_encendido_luces(){
+    public static String Menu_principal(){
     int opcion;
         do{
         opcion = Integer.parseInt(JOptionPane.showInputDialog(null,"         UNIVERSIDAD DE LAS FUERZAS ARMADAS ESPE         \n"
@@ -21,18 +21,39 @@ public class EncendidoLucesAltasBajas {
                 + "\n"
                 + "  ENCENDIDO DEL SISTEMA DE LUCES ALTAS Y BAJAS \n"
                 + "\n"
-                + "Comprobación del sistema de luces altas y bajas.\n"
+                + "Seleccione la opción a desarrollar.\n"
                 + "\n"
-                + "Seleccione el tipo de bombillo.\n"
+                + "[1] Diseño del diagrama de luces Altas y Bajas.\n"
+                + "[2] Materiales empleados para la construcción del circuito.\n"
+                + "[3] Identificación el tipo de bombillo.\n"
+                + "[4] Verificación del tipo de socket.\n"
+                + "[5] Comparación de los relays.\n"
+                + "[6] Ubicación de la fusilera.\n"
+                + "[7] Asignación de los fusibles a ocupar.\n"
+                + "[8] Características del cable automotriz.\n"
+                + "[9] Interruptor trifásico.\n"
+                + "[10] Batería.\n"
+                + "[11] Voltaje de la batería.\n"
+                + "[12] Probar encendido de luces.\n"
                 + "\n"
-                + "[1] Bombillo tipo Piloto.\n"
-                + "[2] Bombillo tipo Halógeno.\n"
+                + "[13] Comprobar un Sistema de Encendido de Luces Altas y Bajas.\n"
                 + "\n"
                 + "[0] Salir.","PROYECTO",JOptionPane.QUESTION_MESSAGE));
         
         switch(opcion){
-            case 1: Tipo_bombillo_Piloto(); break;
-            case 2: Tipo_bombillo_Halogeno(); break;
+            case 1: Diseniar_diagrama_luces_altas_bajas(); break;
+            case 2: Establecer_Materiales(); break;
+            case 3: Identificar_tipo_bombillo(); break;
+            case 4: Verificar_tipo_socket(); break;
+            case 5: Comparar_tipos_relay(); break;
+            case 6: Ubicar_fusilera(); break;
+            case 7: Asignar_fusible(); break;
+            case 8: Especificar_cable_automotriz(); break;
+            case 9: Conectar_interruptor_trifasico(); break;
+            case 10: Usar_bateria(); break;
+            case 11: Medir_voltaje(); break;
+            case 12: Probar_encendido_luces(); break;
+            case 13: Comprobar_sistema_encendido(); break;
             case 0: JOptionPane.showMessageDialog(null,"QUE TENGA UN BUEN DÍA");System.exit(0); break;
             default: JOptionPane.showMessageDialog(null, "La opcion seleccionada es incorrecta "
                     + "vuelva a seleccionar.\n.","ERROR OPCIÓN",JOptionPane.WARNING_MESSAGE);
@@ -40,6 +61,459 @@ public class EncendidoLucesAltasBajas {
         }while(opcion!=2);
         return null;
     }
+    
+    public static String Diseniar_diagrama_luces_altas_bajas(){
+        
+        int  relay, opcion1;
+        String bombillo;
+        String software;
+        String interruptor;
+        String fusible;
+        String celda_energia;
+        software=(JOptionPane.showInputDialog("INGRESE EL SOFTWARE A OCUPAR PARA EL DISEÑO DEL DIAGRAMA: "));
+        bombillo=(JOptionPane.showInputDialog("INGRESAR NÚMERO DE BOMBILLOS A IMPLEMENTAR EN EL DIAGRAMA: "));
+        relay=Integer.parseInt(JOptionPane.showInputDialog("INGRESE EL NUMERO DE RELAY A OCUPAR EN EL DIAGRAMA: "));
+        fusible=(JOptionPane.showInputDialog("INGRESE EL NÚMERO DE FUSIBLES A IMPLEMETAR EN EL DIAGRAMA "
+                + "SU VALOR DE AMPERAJE: "));
+        interruptor=(JOptionPane.showInputDialog("INGRESE EL INTERRUPTOR A OCUPAR: "));
+        celda_energia=(JOptionPane.showInputDialog("INGRESE EL VALOR DE LA CELDA PARA SU FUNCIONAMIENTO: "));
+       
+        do{
+        opcion1=Integer.parseInt(JOptionPane.showInputDialog(null,"El software a ocupar para el diseño del diagrama es "+software+"\n"
+                + "con un numero de "+bombillo+" tanto para altas como para bajas\n"
+                + "con "+relay+" relay uno para bajas y uno para altas,\n "
+                + "con "+fusible+" para que los elementos implementados funcionen con normalidad,\n"
+                + "un "+interruptor+" para la activación de las luces altas como para bajas y\n"
+                + "una "+celda_energia+" para el funcionamiento de la simulación.\n"
+                + "\n"
+                + "[1] Menu principal.\n"
+                + "[2] Elementos a ocupar.\n"
+                + "\n"
+                + "[0] Salir.","DISEÑO DEL DIAGRAMA",JOptionPane.QUESTION_MESSAGE));
+                
+        switch(opcion1){
+            case 1: Menu_principal(); break;
+            case 2: Establecer_Materiales(); break;
+            case 0: JOptionPane.showMessageDialog(null,"QUE TENGA UN BUEN DÍA");System.exit(0); break;
+            default: JOptionPane.showMessageDialog(null, "La opcion seleccionada es incorrecta "
+                    + "vuelva a seleccionar.\n.","ERROR OPCIÓN",JOptionPane.WARNING_MESSAGE);
+        }
+        }while(opcion1!=2);
+        return null;
+    }
+    
+    public static String Establecer_Materiales(){
+        
+        int   opcion2;
+        String tipo_material;
+        String materiales;
+        tipo_material=(JOptionPane.showInputDialog("INGRESE EL TIPO DE MATERIAL PARA CONSTRUIR EL CIRCUITO: "));
+        materiales=(JOptionPane.showInputDialog("INGRESE LOS MATERIALES A OCUPAR: "));
+        
+        do{
+        opcion2=Integer.parseInt(JOptionPane.showInputDialog(null,"Los materiales a ocupar con : "+tipo_material+"\n"
+                + "Ya que se va a armar un circuito electrico.\n"
+                + "\n"
+                + "Los materiales a ocupar son los siguientes:\n"
+                + materiales+".\n"
+                + "\n"
+                + "[1] Menu principal.\n"
+                + "[2] Identificar tipo de bombillo.\n"
+                + "\n"
+                + "[0] Salir.","MATERIALES EMPLEADOS",JOptionPane.QUESTION_MESSAGE));
+                
+        switch(opcion2){
+            case 1: Menu_principal(); break;
+            case 2: Identificar_tipo_bombillo(); break;
+            case 0: JOptionPane.showMessageDialog(null,"QUE TENGA UN BUEN DÍA");System.exit(0); break;
+            default: JOptionPane.showMessageDialog(null, "La opcion seleccionada es incorrecta "
+                    + "vuelva a seleccionar.\n.","ERROR OPCIÓN",JOptionPane.WARNING_MESSAGE);
+        }
+        }while(opcion2!=2);
+        return null;
+    }
+    
+    public static String Identificar_tipo_bombillo(){
+        
+        int   opcion3;
+        String tipo_bombillo;
+        String marca_bombillo;
+        String color_bombillo;
+        String tamanio_bombillo;
+        String numero_filamento;
+        tipo_bombillo=(JOptionPane.showInputDialog("QUE TIPO DE BOMBILLO SE ESTA OCUPANDO: "));
+        marca_bombillo=(JOptionPane.showInputDialog("INGRESE LA MARCA DEL BOMBILLO: "));
+        color_bombillo=(JOptionPane.showInputDialog("QUE TIPO DE ILUMINACIÓN GENERA EL BOMBILLO: "));
+        tamanio_bombillo=(JOptionPane.showInputDialog("IDENTIFIQUE EL TAMAÑO DEL BOMBILLO: "));
+        numero_filamento=(JOptionPane.showInputDialog("DESCRIBA DE CUANTOS FILAMENTOS ES EL BOMBILLO A OCUPAR: "));
+        
+        do{
+        opcion3=Integer.parseInt(JOptionPane.showInputDialog(null,"El tipo de bombillo a ocupar es "+tipo_bombillo+" de la marca "+marca_bombillo+",\n"
+                + "con un color de iluminación de "+color_bombillo+" de tamaño "+tamanio_bombillo+".\n"
+                + "con "+numero_filamento+"."
+                + "\n"
+                + "[1] Menu principal.\n"
+                + "[2] Verificar socket.\n"
+                + "\n"
+                + "[0] Salir.","CARACTERÍSTICAS DEL BOMBILLO",JOptionPane.QUESTION_MESSAGE));
+                
+        switch(opcion3){
+            case 1: Menu_principal(); break;
+            case 2: Verificar_tipo_socket(); break;
+            case 0: JOptionPane.showMessageDialog(null,"QUE TENGA UN BUEN DÍA");System.exit(0); break;
+            default: JOptionPane.showMessageDialog(null, "La opcion seleccionada es incorrecta "
+                    + "vuelva a seleccionar.\n.","ERROR OPCIÓN",JOptionPane.WARNING_MESSAGE);
+        }
+        }while(opcion3!=2);
+        return null;
+    }
+    
+    public static String Verificar_tipo_socket(){
+        
+        int   opcion4;
+        String tipo_socket;
+        String modelo_socket;
+        tipo_socket=(JOptionPane.showInputDialog("DESCRIBA EL TIPO DE SOCKET: "));
+        modelo_socket=(JOptionPane.showInputDialog("DETERMINE EL MODELO DE SOCKET A OCUPAR: "));
+        
+        do{
+        opcion4=Integer.parseInt(JOptionPane.showInputDialog(null,"El tipo de socket a ocuapar es un "+tipo_socket+",\n"
+                + "de un modelo "+modelo_socket+"."
+                + "\n"
+                + "[1] Menu principal.\n"
+                + "[2] Comparar relay.\n"
+                + "\n"
+                + "[0] Salir.","VERIFICAR SOCKET",JOptionPane.QUESTION_MESSAGE));
+                
+        switch(opcion4){
+            case 1: Menu_principal(); break;
+            case 2: Comparar_tipos_relay(); break;
+            case 0: JOptionPane.showMessageDialog(null,"QUE TENGA UN BUEN DÍA");System.exit(0); break;
+            default: JOptionPane.showMessageDialog(null, "La opcion seleccionada es incorrecta "
+                    + "vuelva a seleccionar.\n.","ERROR OPCIÓN",JOptionPane.WARNING_MESSAGE);
+        }
+        }while(opcion4!=2);
+        return null;
+    }
+    
+    public static String Comparar_tipos_relay(){
+        
+        int   opcion5;
+        String tipo_relay;
+        String funcion_relay;
+        String tamanio_relay;
+        tipo_relay=(JOptionPane.showInputDialog("IDENTIFICAR EL TIPO DE RELAY A OCUPAR: "));
+        funcion_relay=(JOptionPane.showInputDialog("CUÁL ES EL FUNCIONAMIENTO DEL RELAR SELECCIONADO: "));
+        tamanio_relay=(JOptionPane.showInputDialog("DETERMINE EL TAMANIO DEL RELAY: "));
+        
+        do{
+        opcion5=Integer.parseInt(JOptionPane.showInputDialog(null,"El relay a ocupar es un "+tipo_relay+" con el siguiente funcionamiento:\n"
+                + funcion_relay+" con un tamano "+tamanio_relay+"."
+                + "\n"
+                + "[1] Menu principal.\n"
+                + "[2] Fusilera.\n"
+                + "\n"
+                + "[0] Salir.","COMPARAR RELAY",JOptionPane.QUESTION_MESSAGE));
+                
+        switch(opcion5){
+            case 1: Menu_principal(); break;
+            case 2: Ubicar_fusilera(); break;
+            case 0: JOptionPane.showMessageDialog(null,"QUE TENGA UN BUEN DÍA");System.exit(0); break;
+            default: JOptionPane.showMessageDialog(null, "La opcion seleccionada es incorrecta "
+                    + "vuelva a seleccionar.\n.","ERROR OPCIÓN",JOptionPane.WARNING_MESSAGE);
+        }
+        }while(opcion5!=2);
+        return null;
+    }
+    
+    public static String Ubicar_fusilera(){
+        
+        int   opcion6;
+        String tamanio_fusilera;
+        String forma_fusilera;
+        String modelo_fusilera;
+        tamanio_fusilera=(JOptionPane.showInputDialog("DETERIMNAR EL TAMAÑO DE LA FUSILERA A UTILIZAR: "));
+        forma_fusilera=(JOptionPane.showInputDialog("FORMA DE LA FUSILERA CON RESPECTO AL FUSIBLE: "));
+        modelo_fusilera=(JOptionPane.showInputDialog("DETERMINE EL MODELO DE LA FUSILERA CON RESPECTO AL FUSIBLE: "));
+        
+        do{
+        opcion6=Integer.parseInt(JOptionPane.showInputDialog(null,"La fusilera es "+tamanio_fusilera+" en forma "+forma_fusilera+"\n"
+                + "con un modelo: "+modelo_fusilera+"."
+                + "\n"
+                + "[1] Menu principal.\n"
+                + "[2] Fusible.\n"
+                + "\n"
+                + "[0] Salir.","FUSILERA",JOptionPane.QUESTION_MESSAGE));
+                
+        switch(opcion6){
+            case 1: Menu_principal(); break;
+            case 2: Asignar_fusible(); break;
+            case 0: JOptionPane.showMessageDialog(null,"QUE TENGA UN BUEN DÍA");System.exit(0); break;
+            default: JOptionPane.showMessageDialog(null, "La opcion seleccionada es incorrecta "
+                    + "vuelva a seleccionar.\n.","ERROR OPCIÓN",JOptionPane.WARNING_MESSAGE);
+        }
+        }while(opcion6!=2);
+        return null;
+    }
+    
+    public static String Asignar_fusible(){
+        
+        int   opcion7;
+        String tamanio_fusible;
+        String forma_fusible;
+        String capacidad_conduccion;
+        tamanio_fusible=(JOptionPane.showInputDialog("DETERMINAR TAMAÑO DE FUSIBLE A OCUPAR: "));
+        forma_fusible=(JOptionPane.showInputDialog("DESCRIBA LA FORMA DE FUSIBLE A OCUPAR: "));
+        capacidad_conduccion=(JOptionPane.showInputDialog("INDIQUE LA CAPACIDAD DE CONDUCCIÓN DEL FUSIBLE EN AMPERIOS: "));
+        
+        do{
+        opcion7=Integer.parseInt(JOptionPane.showInputDialog(null,"Le tamaño del fusible a ocupar es de "+tamanio_fusible+",\n"
+                + "con una forma "+forma_fusible+", con una conducción de "+capacidad_conduccion+"."
+                + "\n"
+                + "[1] Menu principal.\n"
+                + "[2] Cable automotriz.\n"
+                + "\n"
+                + "[0] Salir.","FUSIBLE",JOptionPane.QUESTION_MESSAGE));
+                
+        switch(opcion7){
+            case 1: Menu_principal(); break;
+            case 2: ; break;
+            case 0: JOptionPane.showMessageDialog(null,"QUE TENGA UN BUEN DÍA");System.exit(0); break;
+            default: JOptionPane.showMessageDialog(null, "La opcion seleccionada es incorrecta "
+                    + "vuelva a seleccionar.\n.","ERROR OPCIÓN",JOptionPane.WARNING_MESSAGE);
+        }
+        }while(opcion7!=2);
+        return null;
+    }
+    
+    public static String Especificar_cable_automotriz(){
+        
+        int   opcion8;
+        String numero_cable;
+        String tipo_cable;
+        String longitud_cable;
+        String color_cable;
+        numero_cable=(JOptionPane.showInputDialog("DETERMINAR EL NÚMERO DE CABLE A UTILIZAR: "));
+        tipo_cable=(JOptionPane.showInputDialog("DESCRIBIR EL TIPO DE CABLE: "));
+        longitud_cable=(JOptionPane.showInputDialog("LONGITUD DE CABLE A UTILIZAR PARA LA CIRCUITO: "));
+        color_cable=(JOptionPane.showInputDialog("COLOR DE CABLE O CABLES A UTILIZAR: "));
+        
+        do{
+        opcion8=Integer.parseInt(JOptionPane.showInputDialog(null,"El número de cable a utilizar es: "+numero_cable+".\n"
+                + "El tipo de cables es "+tipo_cable+", con una longitud de "+longitud_cable+" para la su costrucción,\n"
+                + "con dos cables de color "+color_cable+" para identificar el positivo y negativo de la batería.\n"
+                + "\n"
+                + "[1] Menu principal.\n"
+                + "[2] Interruptor trifásico.\n"
+                + "\n"
+                + "[0] Salir.","CABLE AUTOMOTRIZ",JOptionPane.QUESTION_MESSAGE));
+                
+        switch(opcion8){
+            case 1: Menu_principal(); break;
+            case 2: Conectar_interruptor_trifasico(); break;
+            case 0: JOptionPane.showMessageDialog(null,"QUE TENGA UN BUEN DÍA");System.exit(0); break;
+            default: JOptionPane.showMessageDialog(null, "La opcion seleccionada es incorrecta "
+                    + "vuelva a seleccionar.\n.","ERROR OPCIÓN",JOptionPane.WARNING_MESSAGE);
+        }
+        }while(opcion8!=2);
+        return null;
+    }
+    
+    public static String Conectar_interruptor_trifasico(){
+        
+        int   opcion9;
+        String tamanio_interruptor;
+        String numero_conector;
+        String disenio_interruptor;
+        tamanio_interruptor=(JOptionPane.showInputDialog("DETERMINAR EL TAMANIO DEL INTERRUPTOR: "));
+        numero_conector=(JOptionPane.showInputDialog("DESCRIBIR EL NUMERO DE CONECTORES A TENER EL INTERRUPTOR: "));
+        disenio_interruptor=(JOptionPane.showInputDialog("DEFINIR EL DISEÑO DEL INTERRUPTOR A OCUPAR: "));
+        
+        do{
+        opcion9=Integer.parseInt(JOptionPane.showInputDialog(null,"El interruptor a ocupar es de tamaño "+tamanio_interruptor+" con \n"
+                + numero_conector+" para poder activar a un lado altas y al otro bajas,\n"
+                + "con un diseño de "+disenio_interruptor+".\n"
+                + "\n"
+                + "[1] Menu principal.\n"
+                + "[2] Batería.\n"
+                + "\n"
+                + "[0] Salir.","TIPO INTERRUPTOR",JOptionPane.QUESTION_MESSAGE));
+                
+        switch(opcion9){
+            case 1: Menu_principal(); break;
+            case 2: Usar_bateria(); break;
+            case 0: JOptionPane.showMessageDialog(null,"QUE TENGA UN BUEN DÍA");System.exit(0); break;
+            default: JOptionPane.showMessageDialog(null, "La opcion seleccionada es incorrecta "
+                    + "vuelva a seleccionar.\n.","ERROR OPCIÓN",JOptionPane.WARNING_MESSAGE);
+        }
+        }while(opcion9!=2);
+        return null;
+    }
+    
+    public static String Usar_bateria(){
+        
+        int   opcion10;
+        String estado_bateria;
+        String voltaje_bateria;
+        String tamanio_bateria;
+        String marca_bateria;
+        estado_bateria=(JOptionPane.showInputDialog("DETERMINA ESTADO DE BATERÍA: "));
+        voltaje_bateria=(JOptionPane.showInputDialog("MEDIR EL VOLTAJE DE LA BATERÍA: "));
+        tamanio_bateria=(JOptionPane.showInputDialog("ESTABLECER EL TAMAÑO DE LA BATERÍA A OCUPAR: "));
+        marca_bateria=(JOptionPane.showInputDialog("ESPECIFICAR LA MARCA DE LA BATERIA A OCUPAR: "));
+        
+        do{
+        opcion10=Integer.parseInt(JOptionPane.showInputDialog(null,"La batería  se encuenta en "+estado_bateria+" con un volta de: "+voltaje_bateria+".\n"
+                + "De tamaño "+tamanio_bateria+" de la marca "+marca_bateria+".\n"
+                + "\n"
+                + "[1] Menu principal.\n"
+                + "[2] Voltaje de la batería.\n"
+                + "\n"
+                + "[0] Salir.","BATERÍA",JOptionPane.QUESTION_MESSAGE));
+                
+        switch(opcion10){
+            case 1: Menu_principal(); break;
+            case 2: Medir_voltaje(); break;
+            case 0: JOptionPane.showMessageDialog(null,"QUE TENGA UN BUEN DÍA");System.exit(0); break;
+            default: JOptionPane.showMessageDialog(null, "La opcion seleccionada es incorrecta "
+                    + "vuelva a seleccionar.\n.","ERROR OPCIÓN",JOptionPane.WARNING_MESSAGE);
+        }
+        }while(opcion10!=2);
+        return null;
+    }
+    
+    public static String Medir_voltaje(){
+        
+        int   opcion11;
+        double valor_voltaje=7;
+        
+        valor_voltaje=Double.parseDouble(JOptionPane.showInputDialog("INGRESE EL VOLTAJE DE LA BATERÍA A UTILIZAR"));
+        
+        if (valor_voltaje>=7){
+            do{
+            opcion11=Integer.parseInt(JOptionPane.showInputDialog(null, "Batería con alto voltaje de "+valor_voltaje+" voltios.\n"
+                + "El sistema de luces encendera con normalidad.\n"
+                + "\n"
+                + "[1] Menu principal.\n"
+                + "[2] Probar encendido de luces.\n"
+                + "\n"
+                + "[0] Salir.","VOLTAJE BATERÍA",JOptionPane.QUESTION_MESSAGE));
+            switch(opcion11){
+            case 1: Menu_principal(); break;
+            case 2: Probar_encendido_luces(); break;
+            case 0: JOptionPane.showMessageDialog(null,"QUE TENGA UN BUEN DÍA");System.exit(0); break;
+            default: JOptionPane.showMessageDialog(null, "La opcion seleccionada es incorrecta "
+                    + "vuelva a seleccionar.\n.","ERROR OPCIÓN",JOptionPane.WARNING_MESSAGE);
+        }
+        }while(opcion11!=2);
+        return null;
+        }else{
+            do{
+            opcion11=Integer.parseInt(JOptionPane.showInputDialog(null, "Batería con bajo voltaje de "+valor_voltaje+" voltios.\n"
+                + "El sistema de luces no encendera.\n"
+                + "\n"
+                + "[1] Menu principal.\n"
+                + "[2] Probar encendido de luces.\n"
+                + "\n"
+                + "[0] Salir.","VOLTAJE BATERÍA",JOptionPane.QUESTION_MESSAGE));
+            switch(opcion11){
+            case 1: Menu_principal(); break;
+            case 2: Probar_encendido_luces(); break;
+            case 0: JOptionPane.showMessageDialog(null,"QUE TENGA UN BUEN DÍA");System.exit(0); break;
+            default: JOptionPane.showMessageDialog(null, "La opcion seleccionada es incorrecta "
+                    + "vuelva a seleccionar.\n.","ERROR OPCIÓN",JOptionPane.WARNING_MESSAGE);
+        }
+        }while(opcion11!=2);
+        return null;
+        }
+    }
+    
+    public static String Probar_encendido_luces(){
+        
+        int opcion12;
+        int estado_bateria=0;
+        double valor_voltaje=7;
+        String forma_encendido;
+        forma_encendido=(JOptionPane.showInputDialog("DESCRIBA LA FORMA DE ENCENDIDO: "));
+        estado_bateria=Integer.parseInt(JOptionPane.showInputDialog("DETERMINA ESTADO DE BATERÍA:\n"
+                + "[0] Buen estado de la batería.\n"
+                + "[1] Mal estado de la batería"));
+        
+        if (estado_bateria==0){
+            valor_voltaje=Double.parseDouble(JOptionPane.showInputDialog("INGRESE EL VOLTAJE DE LA BATERÍA A UTILIZAR"));
+            if(valor_voltaje>=7){
+                do{
+            opcion12=Integer.parseInt(JOptionPane.showInputDialog(null, "La bateria esta en buen estado.\n"
+                + "La batería tiene un alto voltaje de "+valor_voltaje+" voltios.\n"
+                + "El sistema de luces encendera con normalidad, con un "+forma_encendido+".\n"
+                + "\n"
+                + "[1] Menu principal.\n"
+                + "\n"
+                + "[0] Salir.","COMPROBACIÓN",JOptionPane.QUESTION_MESSAGE));
+            switch(opcion12){
+            case 1: Menu_principal(); break;
+            case 0: JOptionPane.showMessageDialog(null,"QUE TENGA UN BUEN DÍA");System.exit(0); break;
+            default: JOptionPane.showMessageDialog(null, "La opcion seleccionada es incorrecta "
+                    + "vuelva a seleccionar.\n.","ERROR OPCIÓN",JOptionPane.WARNING_MESSAGE);
+        }
+        }while(opcion12!=2);
+        return null;
+            }else{
+                do{
+            opcion12=Integer.parseInt(JOptionPane.showInputDialog(null, "La bateria esta en buen estado.\n"
+                + "La batería tiene un bajo voltaje de "+valor_voltaje+" voltios.\n"
+                + "El sistema de luces no encendera por su bajo voltaje, aunque tenga un "+forma_encendido+".\n"
+                + "\n"
+                + "[1] Menu principal.\n"
+                + "\n"
+                + "[0] Salir.","VOLTAJE BATERÍA",JOptionPane.QUESTION_MESSAGE));
+            switch(opcion12){
+            case 1: Menu_principal(); break;
+            case 0: JOptionPane.showMessageDialog(null,"QUE TENGA UN BUEN DÍA");System.exit(0); break;
+            default: JOptionPane.showMessageDialog(null, "La opcion seleccionada es incorrecta "
+                    + "vuelva a seleccionar.\n.","ERROR OPCIÓN",JOptionPane.WARNING_MESSAGE);
+        }
+        }while(opcion12!=2);
+            }
+        }else{
+            do{
+            opcion12=Integer.parseInt(JOptionPane.showInputDialog(null, "La bateria esta en mal estado.\n"
+                + "El sistema de luces no encendera, aunque tenga un "+forma_encendido+"\n"
+                + "\n"
+                + "[1] Menu principal.\n"
+                + "\n"
+                + "[0] Salir.","COMPROBACIÓN",JOptionPane.QUESTION_MESSAGE));
+            switch(opcion12){
+            case 1: Menu_principal(); break;
+            case 0: JOptionPane.showMessageDialog(null,"QUE TENGA UN BUEN DÍA");System.exit(0); break;
+            default: JOptionPane.showMessageDialog(null, "La opcion seleccionada es incorrecta "
+                    + "vuelva a seleccionar.\n.","ERROR OPCIÓN",JOptionPane.WARNING_MESSAGE);
+        }
+        }while(opcion12!=2);
+        return null;
+        }
+        return null;
+    }
+    ////////////////////////////////////////////////////////////////////////////
+    public static String Comprobar_sistema_encendido(){
+        
+        int opcion_1;
+        do{
+        opcion_1 = Integer.parseInt(JOptionPane.showInputDialog(null,""
+                + "[1] Bombillo tipo Piloto.\n"
+                + "[2] Bombillo tipo Halógeno.","Tipo de bombillo",JOptionPane.QUESTION_MESSAGE));
+        
+        switch(opcion_1){
+            case 1: Tipo_bombillo_Piloto(); break;
+            case 2: Tipo_bombillo_Halogeno(); break;
+            default: JOptionPane.showMessageDialog(null, "La opcion seleccionada es incorrecta "
+                    + "vuelva a seleccionar.\n.","ERROR OPCIÓN",JOptionPane.WARNING_MESSAGE);
+        }
+        }while(opcion_1!=2);
+        return null;
+    }
+    
+    
     public static String Tipo_bombillo_Piloto(){
         
         int opcion_1;
@@ -88,17 +562,12 @@ public class EncendidoLucesAltasBajas {
                 + "\n "
                 + ""
                 + ""
-                + ""
-                + ""
-                + ""
-                + ""
-                + ""
                 + "[1] Para regresar al menu principal.\n"
                 + "[0] Para salir.\n"
                 + "","Bombillo de un filamento",JOptionPane.QUESTION_MESSAGE));
         
         switch(opcion_3){
-            case 1: Probar_encendido_luces(); break;
+            case 1: Menu_principal(); break;
             case 0: JOptionPane.showMessageDialog(null,"QUE TENGA UN BUEN DÍA");System.exit(0); break;
             default: JOptionPane.showMessageDialog(null, "La opcion seleccionada es incorrecta "
                     + "vuelva a seleccionar.\n.","ERROR OPCIÓN",JOptionPane.WARNING_MESSAGE);
@@ -143,8 +612,8 @@ public class EncendidoLucesAltasBajas {
                 + "\n"
                 + "Voltaje de la bateria.\n"
                 + "\n"
-                + "[1] Voltaje de vateria de [0 a 7]v.\n"
-                + "[2] Voltaje de vateria de [8 a 12]v.\n"
+                + "[1] Voltaje de batería de [0 a 7]v.\n"
+                + "[2] Voltaje de bateria de [8 a 12]v.\n"
                 + "","Batería conectada",JOptionPane.QUESTION_MESSAGE));
         
         switch(opcion_5){
@@ -170,7 +639,7 @@ public class EncendidoLucesAltasBajas {
                 + "","Batería desconectada",JOptionPane.QUESTION_MESSAGE));
         
         switch(opcion_5){
-            case 1: Probar_encendido_luces(); break;
+            case 1: Menu_principal(); break;
             case 0: JOptionPane.showMessageDialog(null,"QUE TENGA UN BUEN DÍA");System.exit(0); break;
             default: JOptionPane.showMessageDialog(null, "La opcion seleccionada es incorrecta "
                     + "vuelva a seleccionar.\n.","ERROR OPCIÓN",JOptionPane.WARNING_MESSAGE);
@@ -192,7 +661,7 @@ public class EncendidoLucesAltasBajas {
                 + "","Batería baja",JOptionPane.QUESTION_MESSAGE));
         
         switch(opcion_6){
-            case 1: Probar_encendido_luces(); break;
+            case 1: Menu_principal(); break;
             case 0: JOptionPane.showMessageDialog(null,"QUE TENGA UN BUEN DÍA");System.exit(0); break;
             default: JOptionPane.showMessageDialog(null, "La opcion seleccionada es incorrecta "
                     + "vuelva a seleccionar.\n.","ERROR OPCIÓN",JOptionPane.WARNING_MESSAGE);
@@ -238,7 +707,7 @@ public class EncendidoLucesAltasBajas {
                 + "","Fusibles en mal estado",JOptionPane.QUESTION_MESSAGE));
         
         switch(opcion_8){
-            case 1: Probar_encendido_luces(); break;
+            case 1: Menu_principal(); break;
             case 0: JOptionPane.showMessageDialog(null,"QUE TENGA UN BUEN DÍA");System.exit(0); break;
             default: JOptionPane.showMessageDialog(null, "La opcion seleccionada es incorrecta "
                     + "vuelva a seleccionar.\n.","ERROR OPCIÓN",JOptionPane.WARNING_MESSAGE);
@@ -284,7 +753,7 @@ public class EncendidoLucesAltasBajas {
                 + "","Rele en mal estado",JOptionPane.QUESTION_MESSAGE));
         
         switch(opcion_10){
-            case 1: Probar_encendido_luces(); break;
+            case 1: Menu_principal(); break;
             case 0: JOptionPane.showMessageDialog(null,"QUE TENGA UN BUEN DÍA");System.exit(0); break;
             default: JOptionPane.showMessageDialog(null, "La opcion seleccionada es incorrecta "
                     + "vuelva a seleccionar.\n.","ERROR OPCIÓN",JOptionPane.WARNING_MESSAGE);
@@ -330,7 +799,7 @@ public class EncendidoLucesAltasBajas {
                 + "","Cables cortados",JOptionPane.QUESTION_MESSAGE));
         
         switch(opcion_12){
-            case 1: Probar_encendido_luces(); break;
+            case 1: Menu_principal(); break;
             case 0: JOptionPane.showMessageDialog(null,"QUE TENGA UN BUEN DÍA");System.exit(0); break;
             default: JOptionPane.showMessageDialog(null, "La opcion seleccionada es incorrecta "
                     + "vuelva a seleccionar.\n.","ERROR OPCIÓN",JOptionPane.WARNING_MESSAGE);
@@ -376,7 +845,7 @@ public class EncendidoLucesAltasBajas {
                 + "","Interruptor mal estado",JOptionPane.QUESTION_MESSAGE));
         
         switch(opcion_14){
-            case 1: Probar_encendido_luces(); break;
+            case 1: Menu_principal(); break;
             case 0: JOptionPane.showMessageDialog(null,"QUE TENGA UN BUEN DÍA");System.exit(0); break;
             default: JOptionPane.showMessageDialog(null, "La opcion seleccionada es incorrecta "
                     + "vuelva a seleccionar.\n.","ERROR OPCIÓN",JOptionPane.WARNING_MESSAGE);
@@ -425,7 +894,7 @@ public class EncendidoLucesAltasBajas {
                 + "","ON izquierda",JOptionPane.QUESTION_MESSAGE));
         
         switch(opcion_14){
-            case 1: Probar_encendido_luces(); break;
+            case 1: Menu_principal(); break;
             case 2: Interruptor_buen_estado(); break;
             case 0: JOptionPane.showMessageDialog(null,"QUE TENGA UN BUEN DÍA");System.exit(0); break;
             default: JOptionPane.showMessageDialog(null, "La opcion seleccionada es incorrecta "
@@ -451,7 +920,7 @@ public class EncendidoLucesAltasBajas {
                 + "","ON derecha",JOptionPane.QUESTION_MESSAGE));
         
         switch(opcion_14){
-            case 1: Probar_encendido_luces(); break;
+            case 1: Menu_principal(); break;
             case 2: Interruptor_buen_estado(); break;
             case 0: JOptionPane.showMessageDialog(null,"QUE TENGA UN BUEN DÍA");System.exit(0); break;
             default: JOptionPane.showMessageDialog(null, "La opcion seleccionada es incorrecta "
@@ -468,7 +937,7 @@ public class EncendidoLucesAltasBajas {
     }
     
     public static void main(String[] args) {
-        System.out.println(Probar_encendido_luces());
+        System.out.println(Menu_principal());
         
     }
     
